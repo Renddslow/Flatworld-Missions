@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Andy &amp; Nancy Raatz</title>
-    <meta name="author" content="@Renddslow">
-    <link rel="stylesheet" href="/style.css">
-  </head>
+<?php include('/inc/header.php'); ?>
   
-  <body>
-
-<!--- Header --->
-  
-    <header>
-      <a href="/" id="logo"><img src="/img/flatworld_logo.png" alt=""></a>
-    </header>
-  
-<!--- Section --->
+<!-- Section -->
       
     <section>
       <div class="profile">

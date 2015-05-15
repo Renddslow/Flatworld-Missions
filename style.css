@@ -204,3 +204,11 @@ BUTTONS
 .go:hover {
   background: url("/img/buttons/sel_button_go.png") no-repeat center;
 }
+
+/*--------------------------
+BUTTONS
+---------------------------*/
+
+footer p {
+  text-align: center;
+}
