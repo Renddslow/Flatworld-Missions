@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Andy &amp; Nancy Raatz</title>
+    <title><?php echo $pageTitle; ?></title>
     <meta name="author" content="@Renddslow">
     <link rel="stylesheet" href="/style.css">
   </head>
