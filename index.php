@@ -8,7 +8,7 @@
   
   <body>
 
-<!--- Header --->
+<!--- Header -->
   
   <header>
     <a href="/" id="logo"><img src="/img/flatworld_logo.png" alt=""></a>
@@ -25,7 +25,7 @@
       </nav>
   </header>
 
-<!--- Section --->
+<!-- Section -->
     
   <section>
     <ul id="gallery">
@@ -132,7 +132,7 @@
     </ul>
   </section>
   <footer>
-    
+    <p>&copy;<?php echo date('Y'); ?> @Renddslow</p>
   </footer>
   </body>
 </html>
