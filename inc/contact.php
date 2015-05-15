@@ -2,6 +2,7 @@
 
 <div class="contact">
 	<h1>Contact <?php echo $missionary ?></h1>
+	<form method="post">
 		<table>
 			<tr>
 				<th>
@@ -29,4 +30,5 @@
 			</tr>
 		</table>
 		<input type="submit" value="Send">
+	</form>
 </div>
