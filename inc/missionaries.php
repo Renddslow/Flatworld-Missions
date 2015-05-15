@@ -1,5 +1,7 @@
 <?php
 
+function get_missionaries_all() {
+
 try {
 	$db = new PDO("mysql:host=localhost;dbname=vitorioa_missionary","vitorioa_matt","Livis100%sexy");
 	$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -17,3 +19,9 @@ try {
 }
 
 $missionaries = ($results->fetchAll(PDO::FETCH_ASSOC));
+
+return $missionaries;
+
+}
+
+?>
