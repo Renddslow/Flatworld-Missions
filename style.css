@@ -1,0 +1,206 @@
+/*--------------------------
+MAIN CONTENT
+---------------------------*/
+
+@font-face {
+  font-family: 'Pier Sans';
+  src: url('/fonts/pier_regular.otf');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src:url('/fonts/ufonts.com_gotham-black-1 (2).otf');
+}
+
+/*--------------------------
+MAIN CONTENT
+---------------------------*/
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f5f5f3;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*--------------------------
+HEADER
+---------------------------*/
+
+header {
+  background-color: #1c1c1c;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#logo {
+  margin: 0;
+}
+
+/*--------------------------
+NAV
+---------------------------*/
+
+nav {
+  background-color: #2a2a2a;
+  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+nav a:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #acc35b;
+  text-decoration: none;
+}
+
+nav a:active {
+  color: #acc35b;
+  text-decoration: none;
+}
+
+nav ul {
+  font-family: 'Gotham', sans-serif;
+  font-size: 1.666em;
+}
+
+nav li {
+  display: inline-block;
+  padding: 0.333em;
+}
+
+/*--------------------------
+GALLERY
+---------------------------*/
+
+#gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#gallery li {
+  float: left;
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background-color: #f5f5f3;
+}
+
+/*--------------------------
+PROFILE
+---------------------------*/
+
+.profile {
+  float: left;
+  width: 46%;
+}
+
+.text {
+  float: left;
+  width: 50%;
+}
+
+section h1 {
+  color: #2b2b2b;
+  font-family: 'Gotham', sans-serif;
+  font-size: 3em;
+  padding: 0 2%;
+  margin: 0;
+  float: left;
+}
+
+section h2 {
+  color: #2b2b2b;
+  font-family: 'Gotham', sans-serif;
+  font-size: 4.5em;
+  padding: 0 2%;
+  margin: 0;
+  line-height: 0.688em;
+  float: left;
+}
+
+section h3 {
+  color: #2b2b2b;
+  font-family: 'Pier Sans', sans-serif;
+  font-style: italic;
+  font-size: 1.799em;
+  float: left;
+  line-height: 0;
+  padding: 0 2%;
+}
+
+section span {
+  color: #2b2b2b;
+  display: block;
+  font-size: 1em;
+  font-family: 'Pier Sans', sans-serif;
+  float: left;
+  padding: 0 2%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/*--------------------------
+BUTTONS
+---------------------------*/
+
+.buttons ul {
+  margin: 1% 2%;
+  padding: 0;
+}
+
+.buttons li {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.pray {
+  background: url("/img/buttons/button_pray.png") no-repeat center;
+  width: 114px;
+  height: 41px;
+  display: block;
+}
+
+.pray:hover {
+  background: url("/img/buttons/sel_button_pray.png") no-repeat center;
+}
+
+.give {
+  background: url("/img/buttons/button_give.png") no-repeat center;
+  width: 114px;
+  height: 41px;
+  display: block;
+}
+
+.give:hover {
+  background: url("/img/buttons/sel_button_give.png") no-repeat center;
+}
+
+.go {
+  background: url("/img/buttons/button_go.png") no-repeat center;
+  width: 114px;
+  height: 41px;
+  display: block;
+}
+
+.go:hover {
+  background: url("/img/buttons/sel_button_go.png") no-repeat center;
+}
