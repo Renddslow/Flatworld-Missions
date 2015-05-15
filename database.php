@@ -1,11 +1,20 @@
 <?php
 
 try {
-$db = new PDO("mysql:host=localhost;dbname=vitorioa_missionary","vitorioa_matt","Livis100%sexy");
-var_dump($db);
+	$db = new PDO("mysql:host=localhost;dbname=vitorioa_missionary","vitorioa_matt","Livis100%sexy");
+	$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+	$db->exec("SET NAMES 'utf8'");
 } catch (Exception $e) {
 	echo "Could not connect to the database.";
 	exit;
 }
 
-echo "Woo-hoo!";
+try {
+	$results = $db->query("SELECT first_names, last_name, country, region, paragraph, img_path, alt, email FROM missionaries");
+	echo "Our query ran succesfully."
+} catch (Exception $e) {
+	echo "Data could not be retrieved from the database.";
+}
+
+echo "<pre>";
+var_dump($results->fetchAll());
