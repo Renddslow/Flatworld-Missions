@@ -1,11 +1,19 @@
 <?php include("inc/missionaries.php"); 
 
-$missionary_id = $_GET["id"];
-$missionary = $missionaries[$missionary_id];
+if (isset($_GET["id"])) {
+  $missionary_id = $_GET["id"];
+  if (isset($missionaries[$missionary_id])) {
+    $missionary = $missionaries[$missionary_id];
+  }
+} 
+if (!isset($missionary)) {
+  header("Location: index.php");
+  exit;
+}
 
 ?>
 <?php
-$pageTitle = "";
+$pageTitle = $missionary["last_name"] . " - " . $missionary["country"];
 include('inc/header.php'); ?>
   
 <!-- Section -->
