@@ -1,13 +1,18 @@
-<?php include('/inc/missionaries.php'); ?>
+<?php include("inc/missionaries.php"); 
+
+$missionary_id = $_GET["id"];
+$missionary = $missionaries[$missionary_id];
+
+?>
 <?php
 $pageTitle = "";
-include('/inc/header.php'); ?>
+include('inc/header.php'); ?>
   
 <!-- Section -->
       
     <section>
       <div class="profile">
-      <img src="/img/people/raatz.jpeg" alt="Raatz Family">
+      <img src="<?php echo $missionary["img_path"]; ?>" alt="<?php echo $missionary["alt"]; ?>">
         <div class="buttons">
           <ul>
             <a href="#pray"><li class="pray"></li></a>
@@ -17,11 +22,11 @@ include('/inc/header.php'); ?>
         </div>
       </div>
       <div class="text">
-        <h1>Andy &amp; Nancy</h1>
-        <h2>Raatz</h2>
-        <h3>russia, eurasia</h3>
+        <h1><?php echo $missionary["first_names"]; ?> </h1>
+        <h2><?php echo $missionary["last_name"]; ?></h2>
+        <h3><?php echo $missionary["country"]; ?>, <?php echo $missionary["region"]; ?></h3>
         
-        <span>Andy and Nancy Raatz have three daughters. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet orci id augue aliquam elementum. Pellentesque a accumsan nibh. Proin sed sodales nunc, eget lacinia massa. Morbi viverra tortor id eleifend semper. Nullam vel diam id sem efficitur euismod. Aliquam lorem leo, hendrerit pulvinar tellus non, accumsan varius est. Vestibulum porttitor sapien a dolor tempus, nec semper velit tempus. Maecenas velit nunc, mattis vel sagittis et, mattis nec tortor. Aliquam lorem leo, hendrerit pulvinar tellus non, accumsan varius est. Vestibulum porttitor sapien a dolor tempus, nec semper velit tempus. Maecenas velit nunc, mattis vel sagittis et, mattis nec tortor.</span>
+        <span><?php echo $missionary["paragraph"]; ?></span>
       </div>
       
     </section>
