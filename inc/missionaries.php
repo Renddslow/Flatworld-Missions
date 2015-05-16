@@ -1,6 +1,6 @@
-<?php
+ <?php /*
 
-//function get_missionaries_all() {
+function get_missionaries_all() {
 
 try {
 	$db = new PDO("mysql:host=localhost;dbname=vitorioa_missionary","vitorioa_matt","Livis100%sexy");
@@ -23,8 +23,6 @@ $missionaries = ($results->fetchAll(PDO::FETCH_ASSOC));
 
 return $missionaries;
 
-//}
-//echo "<pre>";
-//var_dump($results->fetchAll(PDO::FETCH_ASSOC));
+}
 
-?>
+*/?>
