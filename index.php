@@ -1,111 +1,20 @@
+<?php include("/inc/missionaries.php"); ?>
 <?php 
 
 $pageTitle = "Flatworld";
 
-include("/inc/header_main.php"); ?>
+include("/inc/header_main.php"); 
+?>
+
 
 <!-- Section -->
     
   <section>
     <ul id="gallery">
-      <li>
-        <a href="/missionaries/raatz/">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
-        </a>
-      </li>
-      <li>
-        <a href="/raatz/index.html">
-          <img src="/img/people/raatz.jpeg" alt="Raatz Family"> 
+      <?php foreach($missionaries as $missionary_id => $missionary) {
+        echo "<li>";
+        echo '<a href="/missionary.php?id=' . $missionary_id . '">';
+        echo '<img src="' . $missionaries["img_path"] . '" alt="' . $missionaries["last_name"] . '">'; 
         </a>
       </li>
     </ul>
