@@ -5,7 +5,7 @@ function get_list_view_html($missionary_id, $missionary) {
 	$output = "";
 
 	$output = $output . "<li>";
-    $output = $output . '<a href="/missionary.php?id=101">';
+    $output = $output . '<a href="/missionary.php?id=1"' . $missionary_id . '>';
     $output = $output . '<img src="' . $missionary["img_path"] . '" alt="' . $missionary["alt"] . '">';
   	$output = $output . '</a>';
     $output = $output . '</li>'; 
@@ -13,6 +13,13 @@ function get_list_view_html($missionary_id, $missionary) {
 	return $output;
 }
 
+function get_email($missionary_id, $missionary) {
+	$output = "";
+
+	$output = $output . echo $missionary["email"];
+
+	return $output;
+}
 
 $missionaries = array();
 $missionaries[101] = array(
