@@ -4,12 +4,12 @@ MAIN CONTENT
 
 @font-face {
   font-family: 'Pier Sans';
-  src: url('/fonts/pier_regular.otf');
+  src: url('fonts/pier_regular.otf');
 }
 
 @font-face {
   font-family: 'Gotham';
-  src:url('/fonts/ufonts.com_gotham-black-1 (2).otf');
+  src:url('fonts/ufonts.com_gotham-black-1 (2).otf');
 }
 
 /*--------------------------

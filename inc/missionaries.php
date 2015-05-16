@@ -1,5 +1,19 @@
  <?php 
 
+function get_list_view_html($missionary_id, $missionary) {
+	
+	$output = "";
+
+	$output = $output . "<li>";
+    $output = $output . '<a href="/missionary.php?id=101">';
+    $output = $output . '<img src="' . $missionary["img_path"] . '" alt="' . $missionary["alt"] . '">';
+  	$output = $output . '</a>';
+    $output = $output . '</li>'; 
+	
+	return $output;
+}
+
+
 $missionaries = array();
 $missionaries[101] = array(
   "first_names" => "Andy & Nancy",
