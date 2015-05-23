@@ -5,7 +5,7 @@ function get_list_view_html($missionary_id, $missionary) {
 	$output = "";
 
 	$output = $output . "<li>";
-    $output = $output . '<a href="/missionary.php?id=1"' . $missionary_id . '>';
+    $output = $output . '<a href="/missionary.php?id=' . $missionary_id . '">';
     $output = $output . '<img src="' . $missionary["img_path"] . '" alt="' . $missionary["alt"] . '">';
   	$output = $output . '</a>';
     $output = $output . '</li>'; 
@@ -13,13 +13,6 @@ function get_list_view_html($missionary_id, $missionary) {
 	return $output;
 }
 
-function get_email($missionary_id, $missionary) {
-	$output = "";
-
-	$output = $output . echo $missionary["email"];
-
-	return $output;
-}
 
 $missionaries = array();
 $missionaries[101] = array(
@@ -32,6 +25,18 @@ $missionaries[101] = array(
   "alt" => "Raatz Family",
   "email" => "andy.raatz@agmd.org"
   );
+
+$missionaries[102] = array(
+	"first_names" => "Jim & Pam",
+	"last_name" => "Halpert",
+	"country" => "America",
+	"region" => "North America",
+	"paragraph" => "Jim and Pam Halpert are the parents of two beautiful children. They currently serve as missionaries to Scranton, PA. Jim and Pam mutually love paper.",
+	"img_path" => "/img/people/halpert.jpg",
+	"alt" => "Halpert Family",
+	"email" => "mubatt@wyopub.com"
+	);
+
 ?> 
 
  <?php /*

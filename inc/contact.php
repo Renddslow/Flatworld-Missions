@@ -11,70 +11,73 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$message = trim($_POST["message"]);
 
 	if ($name == "" OR $email == "" OR $message == "") {
-		echo "You must specify a value for name, email address, and message.";
-		exit;
+		$error_message = "You must specify a value for name, email address, and message.";
 	}
 
-	foreach( $_POST as $value ) {
-		if( stripos($value, 'Content-Type:') !== FALSE ){
-			echo "There was a problem with the information you entered.";
-			exit;
+	if (!isset($error_message)) {
+		foreach( $_POST as $value ) {
+			if( stripos($value, 'Content-Type:') !== FALSE ){
+				$error_message = "There was a problem with the information you entered.";
+			}
 		}
 	}
 
-	if ($_POST["address"] != ""){
-		echo "Your form submission has an error.";
-		exit;
+	if (!isset($error_message) && $_POST["address"] != ""){
+		$error_message = "Your form submission has an error.";
 	}
 
 	require_once("phpmailer/class.phpmailer.php");
 	$mail = new PHPMailer();
 
-	if (!$mail->ValidateAddress($email)) {
-		echo "You must specify a valid email address.";
-		exit;
+	if (!isset($error_message) && !$mail->ValidateAddress($email)) {
+		$error_message = "You must specify a valid email address.";
 	}
 
+	if(!isset($error_message)) {
+		$email_body = "";
+		$email_body = $email_body . "Name: " . $name . "<br />";
+		$email_body = $email_body . "Email: " . $email . "<br />";
+		$email_body = $email_body . "Message" . $message;
 
-	$email_body = "";
-	$email_body = $email_body . "Name: " . $name . "\n";
-	$email_body = $email_body . "Email: " . $email . "\n";
-	$email_body = $email_body . "Message" . $message;
+		$mail->SetFrom($email, $name);
+		$address = $missionary["email"];
+		$mail->AddAddress($address, $missionary["first_names"] . " " . $missionary["last_name"]);
+		$mail->Subject = "Flatworld Missions App Contact Form | " . $name;
+		$mail->MsgHTML($email_body);
 
-	$mail->SetFrom($email, $name);
+		$mail->IsSMTP();
+		$mail->SMTPAuth = true;
+		$mail->Host = "";
+		$mail->Post = "";
+		$mail->Username = "";
+		$mail->Password = "";
 
-	$address = $missionaries[];
-	$mail->AddAddress($address, );
+		if($mail->Send()) {
+			header("Location: contact.php?status=thanks");
+			exit;
+		} else {
+		  $error_message = "There was a problem sending the email: " . $mail->ErrorInfo;
+		}
 
-	$mail->Subject    = "PHPMailer Test Subject via mail(), basic";
 
-	$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
-
-	$mail->MsgHTML($body);
-
-	$mail->AddAttachment("images/phpmailer.gif");      // attachment
-	$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment
-
-	if(!$mail->Send()) {
-	  echo "Mailer Error: " . $mail->ErrorInfo;
-	} else {
-	  echo "Message sent!";
 	}
-
-	header("Location: contact.php?status=thanks");
-	exit;
 }
-
 ?>
 
 <link rel="stylesheet" href="/style.css">
 
 <div class="contact">
-	<h1>Contact <?php echo $missionary_name; ?></h1>
+	<h1>Contact <?php echo $missionary["name"]; ?></h1>
 
 	<?php if (isset($_GET["status"]) AND $_GET["status"] == "thanks") { ?>
 		<h3>Thanks for the email! We'll get back to you as soon as we can!</h3>
 	<?php } else {?>
+
+		<?php 
+			if (isset($error_message)) {
+				echo '<p class="error_message">' . $error_message . '</p>';
+			}
+		?>
 
 		<form method="post" action="contact.php">
 			<table>
@@ -83,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 						<label for="name">Name</label>
 					</th>
 					<td>
-						<input type="text" name="name" id="name">
+						<input type="text" name="name" id="name" value="<?php if(isset($name) { echo htmlspecialchars($name); } ?>">
 					</td>
 				</tr>
 				<tr>
@@ -91,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 						<label for="email">Email</label>
 					</th>
 					<td>
-						<input type="text" name="email" id="email">
+						<input type="text" name="email" id="email" value="<?php if(isset($email)) { echo htmlspecialchars($email); } ?>">
 					</td>
 				</tr>
 				<tr>
@@ -99,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 						<label for="message">Message</label>
 					</th>
 					<td>
-						<textarea type="text" name="message" id="message"></textarea>
+						<textarea type="text" name="message" id="message"><?php if(isset($message) { echo htmlspecialchars($message); } ?></textarea>
 					</td>
 				</tr>
 				<tr style="display: none;">
