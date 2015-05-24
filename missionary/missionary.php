@@ -1,6 +1,8 @@
 <?php require_once("../inc/config.php"); ?>
 
-<?php require_once("../inc/missionaries.php"); 
+<?php require_once("../inc/missionaries.php");
+$missionaries = get_missionaries_all();
+
 
   if (isset($_GET["id"])) {
     $missionary_id = $_GET["id"];

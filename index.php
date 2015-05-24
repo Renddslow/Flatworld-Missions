@@ -1,5 +1,9 @@
 <?php require_once("inc/config.php"); ?>
-<?php include("inc/missionaries.php"); ?>
+<?php require_once("inc/missionaries.php"); 
+$missionaries = get_missionaries_all();
+?>
+
+
 <?php 
 
 $pageTitle = "Flatworld";
