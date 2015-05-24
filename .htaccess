@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteRule ^missionary/$ /missionary/missionary.php
+RewriteRule ^missionary/([0-9]+)/$ /missionary/missionary.php?id=$1
+RewriteRule ^(missionary/[0-9]+)$ /$1/ [R=301]
+
+RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
+RewriteRule ^missionary.php$ /missionary/%1/? [R=301]
