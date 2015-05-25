@@ -13,6 +13,48 @@ function get_list_view_html($missionary) {
 	return $output;
 }
 
+function get_missionaries_eurasia($missionary) {
+	if ($missionary["region"] == "Eurasia") {
+		echo get_list_view_html($missionary);
+	}
+}
+
+function get_missionaries_africa($missionary) {
+	if ($missionary["region"] == "Africa") {
+		echo get_list_view_html($missionary);
+	}
+}
+
+function get_missionaries_asia($missionary) {
+	if ($missionary["region"] == "Asia") {
+		echo get_list_view_html($missionary);
+	}
+}
+
+function get_missionaries_europe($missionary) {
+	if ($missionary["region"] == "Europe") {
+		echo get_list_view_html($missionary);
+	}
+}
+
+function get_missionaries_latin_america($missionary) {
+	if ($missionary["region"] == "Latin America/Carribean") {
+		echo get_list_view_html($missionary);
+	}
+}
+
+function get_missionaries_north_america($missionary) {
+	if ($missionary["region"] == "North America") {
+		echo get_list_view_html($missionary);
+	}
+}
+
+function get_missionaries_northern_asia($missionary) {
+	if ($missionary["region"] == "Northern Asia") {
+		echo get_list_view_html($missionary);
+	}
+}
+
 function get_missionaries_all() {
 	$missionaries = array();
 	$missionaries[101] = array(

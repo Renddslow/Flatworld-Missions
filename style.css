@@ -40,6 +40,30 @@ header {
   margin: 0;
 }
 
+.toggle {
+  position: absolute;
+  top: 0;
+  right: 270px;
+  -webkit-transform: rotate(-45deg); 
+  -moz-transform: rotate(-45deg); 
+  -o-transform: rotate(-45deg);
+  font-size: 2.5em;
+  z-index: 250;
+  color: #fff;
+}
+
+label:hover {
+  color: #acc35b;
+}
+
+#nav_toggler {
+  display: none;
+}
+
+#nav_toggler:checked + header 
+  nav { display: block; }
+
+
 /*--------------------------
 NAV
 ---------------------------*/
@@ -50,6 +74,7 @@ nav {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  display: none;
 }
 
 nav a:link {
