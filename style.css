@@ -41,9 +41,10 @@ header {
 }
 
 .toggle {
+  max-width: 1050px;
   position: absolute;
   top: 0;
-  right: 270px;
+  right: 5%;
   -webkit-transform: rotate(-45deg); 
   -moz-transform: rotate(-45deg); 
   -o-transform: rotate(-45deg);
