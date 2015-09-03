@@ -6,7 +6,7 @@ function get_list_view_html($missionary) {
 
 	$output = $output . "<li>";
     $output = $output . '<a href="/missionary/' . $missionary["mid"] . '/">';
-    $output = $output . '<img src="' . $missionary["img_path"] . '" alt="' . $missionary["alt"] . '">';
+    $output = $output . '<img src="' . $missionary["img_path"] . '" alt="' . $missionary["last_name"] . ' Family">';
   	$output = $output . '</a>';
     $output = $output . '</li>'; 
 	
